@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="input1">
+    <input type="text" class="input2">
+    <button class="btn">submit</button>
+    <ul class="demo"></ul>
+
+    <script>
+        let getinput1 = document.querySelector(".input1");
+        let getinput2 = document.querySelector(".input2");
+        let getbtn = document.querySelector(".btn");
+        let getDemo = document.querySelector(".demo")
+
+        result1 = [];
+        result2 = [];
+        getbtn.addEventListener('click', function () {
+            let a = getinput1.value;
+            let b = getinput2.value;
+            result1.push(a)
+            result2.push(b)
+            displaydom1()
+            displaydom2()
+            getinput1.value = "";
+            getinput2.value = "";
+        })
+
+        function displaydom1() {
+            let createLi = document.createElement("li");
+            result1.forEach(function(item){
+                createLi.innerText=item;
+                console.log(createLi)
+                getDemo.append(createLi)
+            })
+        }
+
+        function displaydom2() {
+            let createLi = document.createElement("li");
+            result2.forEach(function(item){
+                createLi.innerText=item;
+                console.log(createLi)
+                getDemo.append(createLi)
+            })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
